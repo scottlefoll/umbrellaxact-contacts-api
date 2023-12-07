@@ -1,0 +1,23 @@
+###
+
+GET https://umbrellaxact-contacts.onrender.com/contact HTTPS/1.1
+
+###
+
+GET https://umbrellaxact-contacts.onrender.com/contact/:id HTTPS/1.1
+
+###
+
+PUT https://umbrellaxact-contacts.onrender.com/create/:name HTTPS/1.1
+
+{
+  "firstName": "Willis",
+  "lastName": "Jasperson",
+  "email": "johndoe@example.com",
+  "favoriteColor": "green",
+  "birthday": "1990-01-01"
+}
+
+###
+
+

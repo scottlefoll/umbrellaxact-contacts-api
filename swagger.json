@@ -1,0 +1,154 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "UmbrellaXact Contact API",
+    "description": "UmbrellaXact Contact API",
+    "version": "1.0.0"
+  },
+  "host": "umbrellaxact-contacts.onrender.com",
+  "basePath": "",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "The API documentation for MongoDB Contacts API",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/contact": {
+      "get": {
+        "description": "Get all contacts in MongoDB Contact API",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/contact/{id}": {
+      "get": {
+        "description": "Get single contact by id (ie. 'sarah_kim'), case insensitive",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/createTemp": {
+        "post": {
+            "description": "Create a Temp contact",
+            "parameters": [
+                {
+                    "name": "body",
+                    "in": "body",
+                    "description": "Free-form JSON object",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "description": "Any JSON object"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "Record creation successful."
+                },
+                "400": {
+                    "description": "Record creation unsuccessful. Bad Request - Invalid input or duplicate record found"
+                },
+                "500": {
+                    "description": "Record creation unsuccessful. Internal Server Error"
+                }
+            }
+        }
+    },
+    "/create": {
+      "post": {
+        "description": "Create a contact",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "example": "sarah_kim"
+                },
+                "FName": {
+                    "example": "Sarah"
+                  },
+                "LName": {
+                  "example": "Kim"
+                },
+                "Address": {
+                    "example": "2907 Shelburne Rd"
+                  },
+                "City": {
+                  "example": "Burlington"
+                },
+                "State": {
+                    "example": "VT"
+                  },
+                "Zip": {
+                  "example": "05909"
+                },
+                "Country": {
+                    "example": "USA"
+                  },
+                "Email": {
+                  "example": "saraKim@gmail.com"
+                },
+                "Phone": {
+                    "example": "802-575-3950"
+                  },
+                "Website": {
+                  "example": "ncrealtors.com"
+                },
+                "Company": {
+                    "example": "North Country Realtors"
+                  },
+                "JobTitle": {
+                  "example": "Broker"
+                },
+                "ContactType": {
+                    "example": "Business"
+                },
+                "ContactMethod": {
+                  "example": "Phone"
+                },
+                "Notes": {
+                    "example": "Runs a successful real estate agency."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+            "201": {
+            "description": "Record creation successful."
+            },
+            "400": {
+            "description": "Record creation unsuccessful. Bad Request - Invalid input or duplicate record found"
+            },
+            "500": {
+            "description": "Record creation unsuccessful. Internal Server Error"
+            }
+        }
+      }
+    }
+  }
+}
