@@ -168,7 +168,7 @@ async function createContact(req, res) {
 
         // Send mail with defined transport object
         let info = await transporter.sendMail({
-            from: '"Your Name or Company" <your-email@example.com>', // sender address
+            from: '"Umbrella Xact" <info@umbrellaxact.com>', // sender address
             to: to, // list of receivers
             subject: subject, // Subject line
             text: text, // plain text body
