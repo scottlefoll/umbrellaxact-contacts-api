@@ -180,7 +180,6 @@ async function createContact(req, res) {
     }
   }
 
-
   module.exports = {
     getContacts,
     getContactById,
